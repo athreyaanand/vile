@@ -2,7 +2,7 @@ import random
 
 vowels = ["a"] * 50 + ["e"] * 50 + ["i"] * 50 + ["o"] * 50 + ["u"] * 50 + ["y"] * 10 + ["oe"] * 15 + ["ee"] * 15 + ["oo"] * 15
 consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z", "ph", "th", "ck", "ch", "ng", "tr", "sh"] 
-lengths = ['3'] * 130 + ['4'] * 194 + ['5'] * 277 + ['6'] * 308 + ['7'] * 85 + ['8'] * 15 + ['9'] * 7 + ['10'] * 5
+lengths = ['3'] * 25 + ['4'] * 194 + ['5'] * 277 + ['6'] * 308 + ['7'] * 85 + ['8'] * 15 + ['9'] * 7 + ['10'] * 5
 
 avg_length = 0.0
 
@@ -24,7 +24,7 @@ def generate_name(gender):
     name = name[1:]
   
   avg_length +=  len(name)
-  print "  - " + name + "--" + gender
+  print gender + " -- " + name
 
 for x in range(100):
   if x < 50:
