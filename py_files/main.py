@@ -1,11 +1,14 @@
 #RUN THIS
+import sys
+sys.path.append('Individual')
+sys.path.append('Individual/Helpers')
 
 import random
 
 from DNA import DNA
 from Person import Person
 from BabyFactory import BabyFactory
-from MatchMaker import MatchMaker
+from MatchFactory import MatchFactory
 
 # Create seed people
 dna_a = DNA("11111111")
