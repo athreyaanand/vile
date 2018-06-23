@@ -1,6 +1,6 @@
 #import name_generator
 
-class Individual:
+class Individual(object):
   firstname = ""
   lastname = ""
   gender = ""
@@ -11,7 +11,7 @@ class Individual:
   siblings = []
   name = firstname + " " + lastname
   dna = ""
-  
+
   def __init__(self, dna, firstname, lastname, gender, father, mother, siblings):
     self.dna = dna
     if isinstance(firstname, str):
@@ -26,13 +26,15 @@ class Individual:
       self.mother = mother
     if isinstance(siblings, list):
       self.siblings = siblings
-    
     self.name = self.firstname + " " + self.lastname
 
   def add_sibling(self, sibling):
     if isinstance(sibling, Individual):
       self.siblings.append(sibling)
       sibling.siblings.append(self)
+
+  def get_siblings(self):
+    return self.siblings
   
   def marry(self, partner):
     if isinstance(partner, Individual):
