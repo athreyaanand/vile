@@ -15,10 +15,7 @@ class BabyFactory(object):
       dna_ab = dna_a.cross(dna_b)
       dna_ab = dna_ab.mutate()
 
-      if random.choice([0,1]) == 0:
-        sex = "M"
-      else:
-        sex = "F"
+      sex = random.choice(["M", "F"])
       
       f_name = self.NameFactory.generate_name(sex)
       l_name = self.NameFactory.generate_name(sex)
