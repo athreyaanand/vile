@@ -1,4 +1,4 @@
-import name_generator
+#import name_generator
 
 class Individual:
   firstname = ""
