@@ -1,7 +1,7 @@
 import random
 
 from DNA import DNA
-from Person import Person
+from Individual import Individual
 from NameFactory import NameFactory
 
 class BabyFactory(object):
@@ -20,10 +20,11 @@ class BabyFactory(object):
       else:
         sex = "F"
       
-      name = self.NameFactory.generate_name(sex)
+      f_name = self.NameFactory.generate_name(sex)
+      l_name = self.NameFactory.generate_name(sex)
 
-      person = Person(dna_ab, name, sex)
+      individual = Individual(dna_ab, f_name, l_name, sex, parent_a, parent_b, [])
 
-      print(parent_a.info() + " & " + parent_b.info() + " MADE --> " + person.info())
+      print(parent_a.info() + " & " + parent_b.info() + " MADE --> " + individual.info())
 
-      return person
+      return individual

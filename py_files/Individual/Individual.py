@@ -10,8 +10,10 @@ class Individual:
   children = []
   siblings = []
   name = firstname + " " + lastname
+  dna = ""
   
-  def __init__(self, firstname, lastname, gender, father, mother, siblings):
+  def __init__(self, dna, firstname, lastname, gender, father, mother, siblings):
+    self.dna = dna
     if isinstance(firstname, str):
       self.firstname = firstname
     if isinstance(lastname, str):
@@ -38,28 +40,30 @@ class Individual:
       else:
         self.lastname = partner.lastname
   
+  def info(self):
+    return self.firstname + " " + self.lastname + " (" + self.gender + ")"
+  
+# athreya = Individual(name_generator.generate_name("F"), 
+#                      name_generator.generate_name("M"), 
+#                      "F",
+#                      "god", 
+#                      "god", 
+#                      [])
+# aman = Individual(name_generator.generate_name("M"), 
+#                      name_generator.generate_name("M"), 
+#                      "M",
+#                      "god", 
+#                      "god", 
+#                      [])
+# joseph = Individual(name_generator.generate_name("F"), 
+#                      name_generator.generate_name("M"), 
+#                      "F",
+#                      aman, 
+#                      athreya, 
+#                      [])
 
-athreya = Individual(name_generator.generate_name("F"), 
-                     name_generator.generate_name("M"), 
-                     "F",
-                     "god", 
-                     "god", 
-                     [])
-aman = Individual(name_generator.generate_name("M"), 
-                     name_generator.generate_name("M"), 
-                     "M",
-                     "god", 
-                     "god", 
-                     [])
-joseph = Individual(name_generator.generate_name("F"), 
-                     name_generator.generate_name("M"), 
-                     "F",
-                     aman, 
-                     athreya, 
-                     [])
-
-print athreya.name + " is married to " + aman.name
-print joseph.name + "'s parents are " + joseph.father.name + " " + joseph.mother.name
-athreya.marry(aman)
-print athreya.lastname
-print aman.lastname
+# print athreya.name + " is married to " + aman.name
+# print joseph.name + "'s parents are " + joseph.father.name + " " + joseph.mother.name
+# athreya.marry(aman)
+# print athreya.lastname
+# print aman.lastname

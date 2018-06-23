@@ -6,20 +6,20 @@ sys.path.append('Individual/Helpers')
 import random
 
 from DNA import DNA
-from Person import Person
+from Individual import Individual
 from BabyFactory import BabyFactory
 from MatchFactory import MatchFactory
 
 # Create seed people
 dna_a = DNA("11111111")
 dna_b = DNA("00000000")
-person_a = Person(dna_a, "Eve", "F")
-person_b = Person(dna_b, "Adam", "M")
+adam = Individual(dna_a, "Eve", "GOD", "F", "GOD", "GOD", [])
+eve = Individual(dna_a, "Adam", "GOD", "M", "GOD", "GOD", [])
 
-print(person_a.info())
-print(person_b.info())
+print(adam.info())
+print(eve.info())
 
-Universe = [person_a, person_b]
+Universe = [adam, eve]
 
 BabyFactory = BabyFactory()
 MatchFactory = MatchFactory(Universe)
