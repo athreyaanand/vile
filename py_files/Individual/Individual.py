@@ -25,7 +25,7 @@ class Individual:
     if isinstance(siblings, list):
       self.siblings = siblings
 
-  def add_sibling(sibling):
+  def add_sibling(self, sibling):
     if isinstance(sibling, Individual):
       siblings.append(sibling)
   
