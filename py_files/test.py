@@ -9,8 +9,9 @@ from Universe.Universe import Universe
 
 
 adam = Individual(DNA("00000000"), "Adam", "Pomegranate", "M", "", "", [])
-eve = Individual(DNA("11111111"), "Eve", "Pomegranate", "F", "", "", [])
-
+eve = Individual(DNA("11111111"), "Eve", "Watermelon", "F", "", "", [])
+adam.marry(eve)
+print (adam.lastname + " " + eve.lastname)
 
 BabyFactory = BabyFactory()
 
