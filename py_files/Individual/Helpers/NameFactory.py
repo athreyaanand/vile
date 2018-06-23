@@ -23,11 +23,11 @@ class NameFactory(object):
     if (str(gender) == "F") and (random.randint(0, 100) < 90):
       name = name[1:]
     
-    avg_length +=  len(name)
     return name.capitalize()
 
 #TESTBLOCK__________________________________________________
 #  print gender + " -- " + name
+#  avg_length +=  len(name)
 
 #for x in range(100):
 #  if x < 50:
