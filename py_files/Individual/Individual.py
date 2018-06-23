@@ -42,7 +42,7 @@ class Individual:
         self.lastname = partner.lastname
   
   def info(self):
-    return self.firstname + " " + self.lastname + " (" + self.gender + ")"
+    return self.firstname + " " + self.lastname + " (" + self.gender + ")[" + self.dna.getDNA() + "]"
   
 # athreya = Individual(name_generator.generate_name("F"), 
 #                      name_generator.generate_name("M"), 

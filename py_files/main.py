@@ -11,8 +11,8 @@ from BabyFactory import BabyFactory
 from MatchFactory import MatchFactory
 
 # Create seed people
-dna_a = DNA("11111111")
-dna_b = DNA("00000000")
+dna_a = DNA("11110000")
+dna_b = DNA("00001111")
 adam = Individual(dna_a, "Eve", "GOD", "F", "GOD", "GOD", [])
 eve = Individual(dna_a, "Adam", "GOD", "M", "GOD", "GOD", [])
 
