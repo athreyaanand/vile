@@ -1,6 +1,6 @@
 import random
 
-class MatchMaker(object):
+class MatchFactory(object):
   def __init__(self, universe):
     self.universe = universe
 
