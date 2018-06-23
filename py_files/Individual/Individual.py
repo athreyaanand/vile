@@ -29,7 +29,8 @@ class Individual:
 
   def add_sibling(self, sibling):
     if isinstance(sibling, Individual):
-      siblings.append(sibling)
+      self.siblings.append(sibling)
+      sibling.siblings.append(self)
   
   def marry(self, partner):
     if isinstance(partner, Individual):
