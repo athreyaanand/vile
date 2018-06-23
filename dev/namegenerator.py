@@ -24,16 +24,15 @@ def generate_name(gender):
     name = name[1:]
   
   avg_length +=  len(name)
-  return name.capitalize()
+  #print gender + " -- " + name
 
-#TESTBLOCK__________________________________________________
-#  print gender + " -- " + name
+#TEST BLOCK__________________________________________________
 
 #for x in range(100):
 #  if x < 50:
 #    generate_name("F")
 #  else:
 #    generate_name("M")
-#
+
 #print ("THE AVERAGE NAME LENGTH IS: " + str(avg_length/100))
 

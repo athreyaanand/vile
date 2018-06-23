@@ -19,7 +19,7 @@ class DiGraph(object):
         else:
             self.__graph_dict[vertex1] = [vertex2]
     
-    def __generate_edges
+#    def __generate_edges
 
 
 
