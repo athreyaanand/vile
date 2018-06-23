@@ -21,9 +21,23 @@ baby_3 = BabyFactory.make(adam, eve)
 baby_1.add_sibling(baby_2)
 baby_1.add_sibling(baby_3)
 
-print("Baby 1:", end=" ")
+baby_2.add_sibling(baby_3)
+
+print("Baby 1 Siblings:", end=" ")
 for sib in (baby_1.get_siblings()):
-  print(sib.info(), end=', ')
+  print(sib.get_name(), end=' & ')
+
+print("")
+
+print("Baby 2 Siblings:", end=" ")
+for sib in (baby_2.get_siblings()):
+  print(sib.get_name(), end=' & ')
+
+print("")
+
+print("Baby 3 Siblings:", end=" ")
+for sib in (baby_3.get_siblings()):
+  print(sib.get_name(), end=' & ')
 
 # print("::: DNA - CREATE :::")
 

@@ -35,6 +35,9 @@ class Individual(object):
 
   def get_siblings(self):
     return self.siblings
+
+  def get_name(self):
+    return self.name
   
   def marry(self, partner):
     if isinstance(partner, Individual):
