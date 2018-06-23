@@ -1,8 +1,8 @@
 import random
 
-from DNA import DNA
-from Individual import Individual
-from NameFactory import NameFactory
+from Individual.DNA import DNA
+from Individual.Individual import Individual
+from Factories.NameFactory import NameFactory
 
 class BabyFactory(object):
     def __init__(self):
