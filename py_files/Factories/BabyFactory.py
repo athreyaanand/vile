@@ -17,10 +17,7 @@ class BabyFactory(object):
 
       sex = random.choice(["M", "F"])
       
-      f_name = self.NameFactory.generate_name(sex)
-      l_name = self.NameFactory.generate_name(sex)
-
-      individual = Individual(dna_ab, f_name, father.lastname, sex, father, mother, [])
+      individual = Individual(dna_ab, self.NameFactory.generate_name(sex), father.lastname, sex, father, mother, [])
 
       print(father.info() + " & " + mother.info() + " MADE --> " + individual.info())
 
