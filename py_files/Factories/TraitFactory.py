@@ -20,7 +20,8 @@ class TraitFactory(object):
   def calc_color(self):
     segment = self.dna.getDNA() # pick a seg
     #color = hex(int(segment, 2))
-    color = hex(int(segment, 2))
+    tbit = hex(int(segment, 2))[2:]
+    color = str(tbit[0]) + str(tbit[0]) + str(tbit[1]) + str(tbit[1]) +str(tbit[2]) + str(tbit[2])
     print(color)
     ff = self.hex_to_rgb(color)
     print("val: " + str(ff))
@@ -34,12 +35,14 @@ class TraitFactory(object):
 
   def hex_to_rgb(self, value):
     value = value.lstrip('0x')
-    return tuple(int(value[i:i+1], 16) for i in range(0, 3, 1))
+    print (len(value))
+    print (value) 
+    return tuple(int(value[i:i+2], 16) for i in range(0, 6, 2))
     
   def closest_colour(self, requested_colour):
     min_colours = {}
     for key, name in webcolors.css3_hex_to_names.items():
-        print(key + " " + name)
+        #print(key + " " + name)
         r_c, g_c, b_c = webcolors.hex_to_rgb(key)
         rd = (r_c - requested_colour[0]) ** 2
         gd = (g_c - requested_colour[1]) ** 2
