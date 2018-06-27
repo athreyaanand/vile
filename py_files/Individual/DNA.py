@@ -5,14 +5,11 @@ class DNA(object):
     self.dna = dna
     self.MUTATE_RATE = .125
 
-  def getDNA(self):
-    return self.dna
-
   def cross(self, otherDNA):
     #for now just choose 1 bit from either parent, later deal with sectons
     dna_new = ""
     dna_a = list(self.dna)
-    dna_b = list(otherDNA.getDNA())
+    dna_b = list(otherDNA.dna)
 
     for x in range(len(dna_a)):
       if random.choice([0,1]) == 0:

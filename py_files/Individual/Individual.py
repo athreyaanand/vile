@@ -32,12 +32,6 @@ class Individual(object):
     if isinstance(sibling, Individual):
       self.siblings.append(sibling)
       sibling.siblings.append(self)
-
-  def get_siblings(self):
-    return self.siblings
-
-  def get_name(self):
-    return self.name
   
   def marry(self, partner):
     if isinstance(partner, Individual):
@@ -49,10 +43,9 @@ class Individual(object):
       else:
         self.lastname = partner.lastname
         self.name = self.firstname + " " + self.lastname
-      
   
   def info(self):
-    return self.name + " (" + self.gender + ")[" + self.dna.getDNA() + "]"
+    return self.name + " (" + self.gender + ")[" + self.dna.dna + "]"
   
 # athreya = Individual(name_generator.generate_name("F"), 
 #                      name_generator.generate_name("M"), 
