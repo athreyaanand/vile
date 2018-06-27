@@ -10,8 +10,15 @@ from Universe.Universe import Universe
 
 adam = Individual(DNA("00000000"), "Adam", "Pomegranate", "M", "", "", [])
 eve = Individual(DNA("11111111"), "Eve", "Watermelon", "F", "", "", [])
+
 adam.marry(eve)
-print (adam.lastname + " " + eve.lastname)
+
+if(adam.lastname == eve.lastname): print("Names Match! - " + adam.lastname + " & " + eve.lastname)
+else: print("FAIL! - " + adam.lastname + " & " + eve.lastname)
+
+
+print(adam.name + "'s Spouse: " + adam.spouse.name)
+print(eve.name + "'s Spouse: " + eve.spouse.name)
 
 BabyFactory = BabyFactory()
 
@@ -25,47 +32,52 @@ baby_1.add_sibling(baby_3)
 baby_2.add_sibling(baby_3)
 
 print("Baby 1 Siblings:", end=" ")
-for sib in (baby_1.get_siblings()):
-  print(sib.get_name(), end=' & ')
+for sib in baby_1.siblings:
+  print(sib.name, end=' & ')
 
 print("")
 
 print("Baby 2 Siblings:", end=" ")
-for sib in (baby_2.get_siblings()):
-  print(sib.get_name(), end=' & ')
+for sib in baby_2.siblings:
+  print(sib.name, end=' & ')
 
 print("")
 
 print("Baby 3 Siblings:", end=" ")
-for sib in (baby_3.get_siblings()):
-  print(sib.get_name(), end=' & ')
+for sib in baby_3.siblings:
+  print(sib.name, end=' & ')
 
-# print("::: DNA - CREATE :::")
+print("")
+print("Baby 1 Parents: " + baby_1.father.name + " (Father) & " + baby_1.mother.name + " (Mother)")
+print("Baby 2 Parents: " + baby_2.father.name + " (Father) & " + baby_2.mother.name + " (Mother)")
+print("Baby 3 Parents: " + baby_3.father.name + " (Father) & " + baby_3.mother.name + " (Mother)")
 
-# raw_a = "11111111"
-# raw_b = "00000000"
-# raw_c = "01010101"
+print("::: DNA - CREATE :::")
 
-# dna_a = DNA(raw_a)
-# dna_b = DNA(raw_b)
-# dna_c = DNA(raw_c)
+raw_a = "11111111"
+raw_b = "00000000"
+raw_c = "01010101"
 
-# print("DNA A: " + dna_a.getDNA())
-# print("DNA B: " + dna_b.getDNA())
-# print("DNA C: " + dna_c.getDNA())
+dna_a = DNA(raw_a)
+dna_b = DNA(raw_b)
+dna_c = DNA(raw_c)
 
-# print("\n::: DNA - CROSS :::")
+print("DNA A: " + dna_a.dna)
+print("DNA B: " + dna_b.dna)
+print("DNA C: " + dna_c.dna)
 
-# dna_ab = dna_a.cross(dna_b)
-# dna_bc = dna_b.cross(dna_c)
+print("\n::: DNA - CROSS :::")
 
-# print("A x B: " + dna_a.getDNA() + " x " + dna_b.getDNA() + " >>> " + dna_ab.getDNA())
-# print("B x C: " + dna_b.getDNA() + " x " + dna_c.getDNA() + " >>> " + dna_bc.getDNA())
+dna_ab = dna_a.cross(dna_b)
+dna_bc = dna_b.cross(dna_c)
 
-# print("\n::: DNA - MUTATE :::")
+print("A x B: " + dna_a.dna + " x " + dna_b.dna + " >>> " + dna_ab.dna)
+print("B x C: " + dna_b.dna + " x " + dna_c.dna + " >>> " + dna_bc.dna)
 
-# dna_a = dna_a.mutate()
-# dna_b = dna_b.mutate()
+print("\n::: DNA - MUTATE :::")
 
-# print("!A: " + raw_a + " >>> " + dna_a.getDNA())
-# print("!B: " + raw_b + " >>> " + dna_b.getDNA())
+dna_a = dna_a.mutate()
+dna_b = dna_b.mutate()
+
+print("!A: " + raw_a + " >>> " + dna_a.dna)
+print("!B: " + raw_b + " >>> " + dna_b.dna)
