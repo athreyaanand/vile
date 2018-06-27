@@ -45,7 +45,7 @@ class Individual(object):
       partner.spouse = self
       if partner.gender == "F":
         partner.lastname = self.lastname
-        partner.name = patner.firstname + " " + partner.lastname
+        partner.name = partner.firstname + " " + partner.lastname
       else:
         self.lastname = partner.lastname
         self.name = self.firstname + " " + self.lastname
