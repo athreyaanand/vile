@@ -1,9 +1,15 @@
 import random
 
 class DNA(object):
+
   def __init__(self, dna):
     self.dna = dna
     self.MUTATE_RATE = .125
+    self.genes = dna.split(':')
+    self.traits = ["Gender", "Height", "Weight", "Eye Color", "Skin Color"]
+
+  def get_gene(self, trait):
+    return self.genes[self.traits.index(trait)]
 
   def cross(self, otherDNA):
     #for now just choose 1 bit from either parent, later deal with sectons
@@ -28,4 +34,3 @@ class DNA(object):
         #print(">>>> MUTATING @x=" + str(x))
         dna_arr[x] = str((int(dna_arr[x]) + 1) % 2)
     return DNA("".join(dna_arr))
-    
